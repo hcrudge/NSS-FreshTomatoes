@@ -1,17 +1,24 @@
-import React, { useRef } from "react"
-import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom"
+import React, { useRef, useState } from "react"
+import { Link, useHistory } from "react-router-dom";
 import "./Login.css"
 
 
-export const Login = props => {
-    const email = useRef()
-    const password = useRef()
-    const existDialog = useRef()
+export const Login = () => {
+    const [loginUser, setLoginUser] = useState({ email: "" })
+    const [existDialog, setExistDialog] = useState(false)
+
     const history = useHistory()
 
+    const handleInputChange = (event) => {
+        const newUser = { ...loginUser }
+        newUser[event.target.id] = event.target.value
+        setLoginUser(newUser)
+    }
+
+
     const existingUserCheck = () => {
-        return fetch(`http://localhost:8088/customers?email=${email.current.value}`)
+        // If your json-server URL is different, please change it below!
+        return fetch(`http://localhost:8088/users?email=${loginUser.email}`)
             .then(res => res.json())
             .then(user => user.length ? user[0] : false)
     }
@@ -22,32 +29,34 @@ export const Login = props => {
         existingUserCheck()
             .then(exists => {
                 if (exists) {
-                    localStorage.setItem("kennel_customer", exists.id)
+                    // The user id is saved under the key tomato_user in session Storage. Change below if needed!
+                    sessionStorage.setItem("tomato_user", exists.id)
                     history.push("/")
                 } else {
-                    existDialog.current.showModal()
+                    setExistDialog(true)
                 }
             })
     }
 
     return (
         <main className="container--login">
-            <dialog className="dialog dialog--auth" ref={existDialog}>
-                <div>User does not exist</div>
-                <button className="button--close" onClick={e => existDialog.current.close()}>Close</button>
+            <dialog className="dialog dialog--auth" open={existDialog}>
+                <div>User does not exist, please register for an account.</div>
+                <button className="button--close" onClick={e => setExistDialog(false)}>Close</button>
             </dialog>
-
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Nashville Kennels</h1>
+                    <h1>Fresh Tomatoes</h1>
                     <h2>Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
-                        <input ref={email} type="email"
+                        <input type="email"
                             id="email"
                             className="form-control"
                             placeholder="Email address"
-                            required autoFocus />
+                            required autoFocus
+                            value={loginUser.email}
+                            onChange={handleInputChange} />
                     </fieldset>
                     <fieldset>
                         <button type="submit">
@@ -57,9 +66,8 @@ export const Login = props => {
                 </form>
             </section>
             <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
+                <Link to="/register">Register for an account</Link>
             </section>
         </main>
     )
 }
-

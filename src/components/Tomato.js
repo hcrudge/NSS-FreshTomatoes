@@ -13,7 +13,7 @@ export const Tomato = () => (
           if (sessionStorage.getItem("tomato_user")) {
             return (
               <>
-                {/* <NavBar /> */}
+                <NavBar />
                 <ApplicationViews />
               </>
             )

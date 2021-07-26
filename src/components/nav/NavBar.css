@@ -11,14 +11,11 @@
    justify-content: space-between;
 }
   
-.active {
-   
-  
-}
+/* .active {
+} */
 
-.active:hover {
-
-}
+/* .active:hover {
+} */
 
 .navbar__link {
     color: black;
@@ -29,9 +26,9 @@
     color: rgb(50, 146, 224);
 }
 
-.logo {
+/* .logo {
    
-}
+} */
 
 .logo:hover {
     transform: scale(1.1);

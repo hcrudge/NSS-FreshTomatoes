@@ -8,12 +8,15 @@ export const MovieProvider = (props) => {
     const [movies, setMovies] = useState([])
 
     const getMovies = () => {
-        return fetch("http://localhost:8088/movieLists")
+        return fetch("http://localhost:8088/movies")
         .then(res => res.json())
         .then(setMovies)
     }
-
-
+// fetch the detail for a particular movie.
+    const getMovieById = (id) => {
+        return fetch(`http://localhost:8088/movies/${id}?expand=user&_expand=friend`)
+        .then(response => response.json())
+    }
 
 
 
@@ -25,7 +28,7 @@ export const MovieProvider = (props) => {
     */
         return (
             <MovieContext.Provider value={{
-                movies, getMovies
+                movies, getMovies, getMovieById
             }}>
                 {props.children}
             </MovieContext.Provider>

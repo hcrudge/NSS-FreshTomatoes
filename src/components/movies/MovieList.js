@@ -15,7 +15,7 @@ export const MovieList = () => {
         console.log("MovieList: Initial render before data")
         getMovies()
     }, [])
-
+// Creates the HTML to display the list of movies
 return (
     <>
     <h2 className="MovieListHeader">Movie List</h2>

@@ -19,9 +19,9 @@ export const MovieList = () => {
 return (
     <>
     <h2 className="MovieListHeader">Movie List</h2>
-        {/* <button onClick={() => {history.push("/animals/create")}}>
+        <button onClick={() => {history.push("/movies/create")}}>
             Add Movie
-        </button> */}
+        </button>
     <div className="movies">
             {/* map over array to display movie cards */}
         {movies.map(movie => {

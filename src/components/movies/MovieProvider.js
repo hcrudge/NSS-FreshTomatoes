@@ -17,7 +17,14 @@ export const MovieProvider = (props) => {
         return fetch(`http://localhost:8088/movies/${id}?_expand=user&_expand=friend`)
         .then(response => response.json())
     };
+    // const getMovies = () => {
+    //     return fetch(`https://api.themoviedb.org/3/movie/${movie.TMBId}?api_key=c4e5719c7e8a0eddc452fe601c001d80`)
+    //     .then(response => response.json())
+    //     .then(setMovies)
+    
+    // }
 
+    
 // delete movie from the JSON server by id
 const deleteMovie = (movieId) => {
     return fetch (`http://localhost:8088/movies/${movieId}`,{
@@ -35,9 +42,14 @@ const deleteMovie = (movieId) => {
     */
         return (
             <MovieContext.Provider value={{
-                movies, getMovies, getMovieById, deleteMovie
+                movies, getMovies, getMovieById, deleteMovie, searchMovie
             }}>
                 {props.children}
             </MovieContext.Provider>
         )
 }
+
+export const searchMovie = (term) => {
+    return fetch(`https://api.themoviedb.org/3/search/movie?api_key=c4e5719c7e8a0eddc452fe601c001d80&language=en-US&query=${term}&page=1&include_adult=false`)
+    .then(result => result.json())
+};

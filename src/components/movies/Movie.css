@@ -20,3 +20,18 @@
 /* .movie_poster {
     border-radius: 50px;
 } */
+.mini_movie_container{
+    flex-basis: 28%;
+    margin: 1em;
+    padding: 1em;
+    background-color:darkgray; 
+    border-radius: 50px;
+    border: 1px solid black;
+    text-align: center;
+    align-items: center;
+}
+.mini_movie_outside{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

@@ -5,6 +5,7 @@ import { MovieProvider } from "./movies/MovieProvider"
 import { UserProvider } from "./users/UserProvider"
 import { MovieDetail } from "./movies/MovieDetail"
 import { FriendProvider } from "./friends/FriendProvider"
+import { FindMovie } from "./movies/MovieSearch"
 import { MovieForm } from "./movies/MovieForm"
 
 export const ApplicationViews = () => {
@@ -17,7 +18,10 @@ export const ApplicationViews = () => {
                         <Route exact path="/">
                             <MovieList />
                         </Route>
-                        <Route exact path="/movies/create">
+                        <Route exact path="/movies/search">
+                            <FindMovie />
+                        </Route>
+                        <Route exact path="/movies/create/:movieId(\d+)">
                             <MovieForm />
                         </Route>
                         <Route exact path="/movies/detail/:movieId(\d+)">

@@ -19,14 +19,14 @@ export const MovieList = () => {
 return (
     <>
     <h2 className="MovieListHeader">Movie List</h2>
-        <button onClick={() => {history.push("/movies/create")}}>
+        <button onClick={() => {history.push("/movies/search")}}>
             Add Movie
         </button>
     <div className="movies">
             {/* map over array to display movie cards */}
         {movies.map(movie => {
-        if(movie.userId === parseInt(sessionStorage.getItem("tomato_user")))
-            return <MovieCard key={movie.id} movie={movie} />
+            if(movie.userId === parseInt(sessionStorage.getItem("tomato_user")))
+                return <MovieCard key={movie.id} movie={movie} />
         })
         }
     </div>

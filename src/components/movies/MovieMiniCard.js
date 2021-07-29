@@ -12,7 +12,7 @@ export const MovieMiniCard = ({movie}) => {
   const handleClickSelectMovie = (event) => {
     event.preventDefault()
     // fetchMovie(event.target.value)
-    setMovie(event.target.value)
+    // setMovie(event.target.value)
     history.push(`/movies/create/${event.target.value}`)
     
     // console.log(event.target.value)
@@ -26,7 +26,7 @@ export const MovieMiniCard = ({movie}) => {
       <div className="mini_movie_container">
           <img className="mini_movie_poster" src={imageURL} alt={movie.title} /> 
           <h3 className="mini_movie-title">{movie.title}</h3>
-          <button className="mini_movie_add_buton" value={movie.id} onClick={handleClickSelectMovie}>Add to My List</button>
+          <button className="mini_movie_add_buton" value={movie.id} onClick={handleClickSelectMovie}>Select</button>
       </div>
 
     </div>

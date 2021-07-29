@@ -6,10 +6,10 @@ export const MovieContext = createContext()
 // This component establishes what data can be used.
 export const MovieProvider = (props) => {
     const [movies, setMovies] = useState([]);
-    const [movie, setMovie] = useState({});
+    // const [movie, setMovie] = useState({});
 
     const getMovies = () => {
-        return fetch("http://localhost:8088/movies?_expand=user&_expand=friend")
+        return fetch("http://localhost:8088/movies")
         .then(res => res.json())
         .then(setMovies);
     }
@@ -19,7 +19,20 @@ export const MovieProvider = (props) => {
         .then(response => response.json())
     };
     
-    
+    const addMovie = (movieObject) => {
+        return fetch("http://localhost:8088/movies",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(movieObject)
+        })
+        .then(response => response.json())
+        .then(getMovies)
+    }
+
+
+
     // delete movie from the JSON server by id
     const deleteMovie = (movieId) => {
         return fetch (`http://localhost:8088/movies/${movieId}`,{
@@ -37,7 +50,7 @@ export const MovieProvider = (props) => {
     */
    return (
        <MovieContext.Provider value={{
-           movies, getMovies, getMovieById, deleteMovie, setMovie
+           movies, getMovies, getMovieById, deleteMovie, addMovie
         }}>
                 {props.children}
             </MovieContext.Provider>

@@ -1,12 +1,17 @@
 import React from "react"
 import { Route } from "react-router-dom"
+
 import { MovieList } from "./movies/MovieList"
 import { MovieProvider } from "./movies/MovieProvider"
-import { UserProvider } from "./users/UserProvider"
-import { MovieDetail } from "./movies/MovieDetail"
-import { FriendProvider } from "./friends/FriendProvider"
-import { FindMovie } from "./movies/MovieSearch"
 import { MovieForm } from "./movies/MovieForm"
+import { MovieDetail } from "./movies/MovieDetail"
+import { FindMovie } from "./movies/MovieSearch"
+
+import { UserProvider } from "./users/UserProvider"
+
+import { FriendProvider } from "./friends/FriendProvider"
+import { FriendList } from "./friends/FriendList"
+import { FriendForm } from "./friends/FriendForm"
 
 export const ApplicationViews = () => {
     return (
@@ -30,10 +35,20 @@ export const ApplicationViews = () => {
                     </FriendProvider>
                 </UserProvider>
             </MovieProvider>
-            {/* Render the animal list when http://localhost:3000/animals */}
-            {/* <Route path="/animals">
-                <AnimalCard />
-            </Route> */}
+            
+         
+                <UserProvider>
+                    <FriendProvider>
+                        <Route exact path="/friends">
+                            <FriendList />
+                        </Route>
+                        <Route exact path="/friends/create">
+                            <FriendForm />
+                        </Route>
+                        
+                    </FriendProvider>
+                </UserProvider>
+            
         </>
     )
 }

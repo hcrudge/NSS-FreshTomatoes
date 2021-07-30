@@ -29,6 +29,9 @@ export const ApplicationViews = () => {
                         <Route exact path="/movies/create/:movieId(\d+)">
                             <MovieForm />
                         </Route>
+                        <Route exact path="/movies/edit/:movieId(\d+)">
+                            <MovieForm />
+                        </Route>
                         <Route exact path="/movies/detail/:movieId(\d+)">
                             <MovieDetail />
                         </Route>

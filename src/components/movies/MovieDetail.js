@@ -26,6 +26,12 @@ export const MovieDetail = () => {
           history.push("/")
         })
     };
+
+    const handleEditMovie =(event) => {
+        event.preventDefault()
+        history.push(`/movies/edit/${movie.TMDBId}`)
+    }
+
     const handleReturnMovieList = (event) => {
         event.preventDefault()
         history.push("/")
@@ -36,11 +42,11 @@ export const MovieDetail = () => {
     <img className="movie_poster" src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt="poster"/>
     <h3 className="movie__title">{ movie.title }</h3>
     <div className="movie__runtime">Runtime: { movie.runtime } minutes</div>
-    <div className="movie_genre">Genre: { movie.genre }</div>
-    <div className="movie_synposis">{ movie.synopsis }</div>
+    <div className="movie_genre">Genre: { movie.genres }</div>
+    <div className="movie_synposis">{ movie.overview }</div>
     <div className="movie_friend">Recommended By: {movie.friend?.friendName} </div>
     <div className="movie_comments">Comments: {movie.comments}</div>
-    <button>Edit</button>
+    <button className="edit_movie" onClick={handleEditMovie}>Edit</button>
     <button className ="delete_movie" onClick={handleDeleteMovie}>Delete</button>
     <br/>
     <button className="return_movieList" onClick={handleReturnMovieList}>Return to Movie List</button>

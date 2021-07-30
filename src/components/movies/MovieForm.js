@@ -94,11 +94,13 @@ export const MovieForm =() => {
           <label htmlFor="friend">Select Friend: </label>
           <select name="friendId" id="friendId" className="form-control" value={movie.friendId} onChange={handleControlledInputChange}>
             <option value="0">Select a friend</option>
-            {friends.map(friend => (
-              <option key={friend.id} value={friend.id}>
-                {friend.friendName}
-              </option>
-            ))}
+            {friends.map(friend => {
+                if(friend.usersId === parseInt(sessionStorage.getItem("tomato_user"))){
+                    return <option key={friend.id} value={friend.id}>
+                    {friend.friendName}
+                    </option>
+                }})
+            }
           </select>
         </div>
         <fieldset>

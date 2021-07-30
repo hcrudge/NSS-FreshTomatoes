@@ -6,16 +6,26 @@ export const MovieContext = createContext()
 // This component establishes what data can be used.
 export const MovieProvider = (props) => {
     const [movies, setMovies] = useState([]);
-    // const [movie, setMovie] = useState({});
+ 
 
     const getMovies = () => {
         return fetch("http://localhost:8088/movies")
         .then(res => res.json())
         .then(setMovies);
     }
-    // fetch the detail for a particular movie.
+
+    // fetch the detail for a particular movie based on the TMDBId.
+    const getMovieByTMDBId = (TMDBId) => {
+        return fetch(`http://localhost:8088/TMDB/${TMDBId}/movies?_expand=friend`)
+        .then(response => response.json())
+        .then((response) =>{
+            const jsonMovieObj = response[0]
+            return jsonMovieObj
+        })
+    };
+
     const getMovieById = (id) => {
-        return fetch(`http://localhost:8088/movies/${id}?_expand=user&_expand=friend`)
+        return fetch(`http://localhost:8088/movies/${id}?_expand=friend`)
         .then(response => response.json())
     };
     
@@ -31,11 +41,20 @@ export const MovieProvider = (props) => {
         .then(getMovies)
     }
 
-
+    const updateMovie = (movie) => {
+        return fetch(`http://localhost:8088/movies/${movie.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(movie)
+        })
+        .then(getMovies)
+      }
 
     // delete movie from the JSON server by id
-    const deleteMovie = (movieId) => {
-        return fetch (`http://localhost:8088/movies/${movieId}`,{
+    const deleteMovie = (id) => {
+        return fetch (`http://localhost:8088/movies/${id}`,{
             method: "DELETE"
         })
         .then(getMovies)
@@ -50,7 +69,7 @@ export const MovieProvider = (props) => {
     */
    return (
        <MovieContext.Provider value={{
-           movies, getMovies, getMovieById, deleteMovie, addMovie
+           movies, getMovies, getMovieByTMDBId, deleteMovie, addMovie, getMovieById, updateMovie
         }}>
                 {props.children}
             </MovieContext.Provider>

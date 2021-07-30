@@ -26,7 +26,7 @@ export const FindMovie = () => {
         <>
             <div className= "movie-search">
                 <h1 className="search_movie_lable">Search For A Movie</h1>
-                    <input ref={searchInput} type="text" required autofocus className="form-control-search"></input>
+                    <input ref={searchInput} type="text" required autofocus placeholder="Movie Title" className="form-control-search"></input>
                 <br />
                 <br />
                 <div className= "button_div">

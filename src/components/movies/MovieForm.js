@@ -6,7 +6,7 @@ import { FriendContext } from "../friends/FriendProvider"
 
 
 export const MovieForm =() => {
-    const { getMovies, getMovieById, addMovie} = useContext(MovieContext);
+    const { movies, getMovies, getMovieByTMDBId, addMovie, updateMovie} = useContext(MovieContext);
     const history = useHistory();
     const { movieId } = useParams()
     const { friends, getFriends } = useContext(FriendContext)
@@ -26,14 +26,27 @@ export const MovieForm =() => {
     });
 
     const [isLoading, setIsLoading] = useState(true)
-
+    
+   
+    
     useEffect(() => {
-        fetchMovie(movieId)
-        .then((response) => {
-            setMovie(response)
-            setIsLoading(false)
+        getMovies()
+        .then(() => {
+            if(movies.find(m => (parseInt(movieId) === m.TMDBId) && m.userId === parseInt(sessionStorage.getItem("tomato_user")))){
+                getMovieByTMDBId(parseInt(movieId))
+                .then(jsonMovieObj =>{
+                    setMovie(jsonMovieObj)})
+                .then(setIsLoading(false))
+                
+            } else {
+                fetchMovie(movieId)
+                .then( movie => {
+                    setMovie(movie)
+                    setIsLoading(false)
+                })
+                .then(getFriends)
+            }
         })
-        .then(getFriends)
     },[])
 
     useEffect(() =>{
@@ -43,23 +56,43 @@ export const MovieForm =() => {
    const saveNewMovie = () => {
        const userId = parseInt(sessionStorage.getItem("tomato_user"))       
        const addNewMovie = {
-        TMDBId: parseInt(movieId),
-        poster_path: movie.poster_path,
-        title: movie.title,
-        runtime: movie.runtime,
-        genres: movie.genres[0].name,
-        overview: movie.overview,
-        tagline: movie.tagline,
-        userId: userId,
-        friendId: parseInt(movie.friendId),
-        userRating: "",
-        comments: movie.comments 
+            TMDBId: parseInt(movieId),
+            poster_path: movie.poster_path,
+            title: movie.title,
+            runtime: movie.runtime,
+            // genres: movie.genres[0].name,
+            overview: movie.overview,
+            tagline: movie.tagline,
+            userId: userId,
+            friendId: parseInt(movie.friendId),
+            userRating: "",
+            comments: movie.comments 
        }
        addMovie(addNewMovie)
        .then(() => history.push("/"))
-       console.log(movie.friendId)
+       
    }
    
+   const saveEditMovie = () => {
+    const userId = parseInt(sessionStorage.getItem("tomato_user"))       
+     updateMovie({
+        id: movie.id, 
+        TMDBId: parseInt(movieId),
+         poster_path: movie.poster_path,
+         title: movie.title,
+         runtime: movie.runtime,
+        //  genres: movie.genres[0].name,
+         overview: movie.overview,
+         tagline: movie.tagline,
+         userId: userId,
+         friendId: parseInt(movie.friendId),
+         userRating: "",
+         comments: movie.comments 
+    })
+    
+    .then(() => history.push("/"))
+     
+}
    
     const handleControlledInputChange = event => {
        const newMovie ={ ...movie }
@@ -77,17 +110,21 @@ export const MovieForm =() => {
             window.alert("Please select a friend")
         }else {
             setIsLoading(true);
-
+            
+            if(movies.find(m => (parseInt(movieId) === m.TMDBId) && m.userId === parseInt(sessionStorage.getItem("tomato_user")))){
+                saveEditMovie()
+            } else {
             saveNewMovie()
+            }
         }  
     }
-
+    
     return(
     <section className="movie">
     <img className="movie_poster" src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt="poster"/>
     <h3 className="movie__title">{ movie.title }</h3>
     <div className="movie__runtime">Runtime: { movie.runtime } minutes</div>
-    <div className="movie_genre">Genre: { movie.genres[0]?.name }</div>
+    {/* <div className="movie_genre">Genre: { movie.genres[0]?.name }</div> */}
     <div className="movie_synposis">{ movie.overview }</div>
     <br/>
     <div className="form-group">

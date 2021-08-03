@@ -1,16 +1,14 @@
 .navbar {
-    display: flex;
-    background-color:rgba(255, 0, 0, 0.705);
-    flex-basis: 100%;
+  display: flex;
+  background-color: rgba(255, 0, 0, 0.705);
+  flex-basis: 100%;
 }
 
-
-  
 .navbar__item {
-    list-style-type: none;
-   justify-content: space-between;
+  list-style-type: none;
+  justify-content: space-between;
 }
-  
+
 /* .active {
 } */
 
@@ -18,12 +16,12 @@
 } */
 
 .navbar__link {
-    color: black;
-    margin: 5em;
+  color: black;
+  margin: 5em;
 }
 
 .navbar__link:hover {
-    color: rgb(50, 146, 224);
+  color: rgb(50, 146, 224);
 }
 
 /* .logo {
@@ -31,5 +29,5 @@
 } */
 
 .logo:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }

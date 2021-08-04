@@ -19,6 +19,12 @@ export const FindMovie = () => {
       });
     }
   };
+
+ 
+  const handleClearSearch = () => {
+      searchInput.current.value = "";
+     setMovies()
+  }
   return (
     <>
       <div className="movie-search">
@@ -35,11 +41,14 @@ export const FindMovie = () => {
         <br />
         <div className="button_div">
           <button className="search_button" onClick={handleSearch}>
-            SEARCH
+            Search
+          </button>
+          <button className="clear_search_button" onClick={handleClearSearch}>
+            Clear Search Results
           </button>
         </div>
         <div>
-          {movies.map((m) => (
+          {movies?.map((m) => (
             <MovieMiniCard key={m.id} movie={m} />
           ))}
         </div>

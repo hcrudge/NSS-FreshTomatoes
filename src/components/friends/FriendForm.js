@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory} from "react-router-dom";
 import { UserContext } from "../users/UserProvider";
 import { FriendContext } from "./FriendProvider";
 
@@ -12,7 +12,7 @@ export const FriendForm = () => {
   const [friend, setFriend] = useState({
     friendName: "",
     icon: "",
-    usersId: 0,
+    userId: 0,
   });
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export const FriendForm = () => {
     const addNewFriend = {
       friendName: friend.name,
       icon: "",
-      usersId: userId,
+      userId: userId,
     };
 
     addFriend(addNewFriend).then(() => history.push("/friends"));

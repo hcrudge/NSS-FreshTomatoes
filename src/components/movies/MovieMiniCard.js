@@ -5,12 +5,13 @@ import { MovieContext } from "./MovieProvider";
 export const MovieMiniCard = ({ movie }) => {
   const history = useHistory();
   const { movies } = useContext(MovieContext);
+  const userId = parseInt(sessionStorage.getItem("tomato_user"));
 
   // captures the id for the selected movie and saves it in setMovie and then set the url to call the MovieForm
   const handleClickSelectMovie = (event) => {
     event.preventDefault();
     console.log(movie.id);
-    if (movies.find((m) => movie.id === m.TMDBId)) {
+    if (movies.find((m) => movie.id === m.TMDBId && m.userId === userId)) {
       window.alert("This movie is already on your Movie List!");
     } else {
       history.push(`/movies/create/${event.target.value}`);

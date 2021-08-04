@@ -21,7 +21,7 @@ export const MovieForm = () => {
     tagline: "",
     userId: 0,
     friendId: 0,
-    userRating: "",
+    userRating: 0,
     comments: "",
   });
 
@@ -68,7 +68,7 @@ export const MovieForm = () => {
       tagline: movie.tagline,
       userId: userId,
       friendId: parseInt(movie.friendId),
-      userRating: "",
+      userRating: 0,
       comments: movie.comments,
     };
     addMovie(addNewMovie).then(() => history.push("/"));
@@ -87,7 +87,7 @@ export const MovieForm = () => {
       tagline: movie.tagline,
       userId: userId,
       friendId: parseInt(movie.friendId),
-      userRating: "",
+      userRating: movie.userRating,
       comments: movie.comments,
     }).then(() => history.push("/"));
   };

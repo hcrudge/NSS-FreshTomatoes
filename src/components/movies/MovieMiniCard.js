@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
-import { fetchMovie, MovieContext } from "./MovieProvider";
+import { MovieContext } from "./MovieProvider";
 
 export const MovieMiniCard = ({ movie }) => {
   const history = useHistory();
-  const { movies, setMovie } = useContext(MovieContext);
+  const { movies } = useContext(MovieContext);
 
   // captures the id for the selected movie and saves it in setMovie and then set the url to call the MovieForm
   const handleClickSelectMovie = (event) => {
@@ -13,11 +13,7 @@ export const MovieMiniCard = ({ movie }) => {
     if (movies.find((m) => movie.id === m.TMDBId)) {
       window.alert("This movie is already on your Movie List!");
     } else {
-      // fetchMovie(event.target.value)
-      // setMovie(event.target.value)
       history.push(`/movies/create/${event.target.value}`);
-
-      // console.log(event.target.value)
     }
   };
 

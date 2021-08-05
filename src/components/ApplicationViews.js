@@ -35,20 +35,17 @@ export const ApplicationViews = () => {
             <Route exact path="/movies/detail/:movieId(\d+)">
               <MovieDetail />
             </Route>
-          </FriendProvider>
-        </UserProvider>
-      </MovieProvider>
-
-      <UserProvider>
-        <FriendProvider>
           <Route exact path="/friends">
             <FriendList />
           </Route>
           <Route exact path="/friends/create">
             <FriendForm />
           </Route>
-        </FriendProvider>
-      </UserProvider>
+          </FriendProvider>
+        </UserProvider>
+      </MovieProvider>
+
+      
     </>
   );
 };

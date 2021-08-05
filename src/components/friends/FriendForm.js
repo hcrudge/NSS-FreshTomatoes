@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory} from "react-router-dom";
 import { UserContext } from "../users/UserProvider";
 import { FriendContext } from "./FriendProvider";
 
@@ -12,7 +12,7 @@ export const FriendForm = () => {
   const [friend, setFriend] = useState({
     friendName: "",
     icon: "",
-    usersId: 0,
+    userId: 0,
   });
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export const FriendForm = () => {
     const addNewFriend = {
       friendName: friend.name,
       icon: "",
-      usersId: userId,
+      userId: userId,
     };
 
     addFriend(addNewFriend).then(() => history.push("/friends"));
@@ -40,25 +40,31 @@ export const FriendForm = () => {
 
   return (
     <form className="friendForm">
-      <h2 className="friendForm__title">New Friend</h2>
+      <h1 className="friendForm_title">New Friend</h1>
       <fieldset>
-        <div className="form-group">
-          <label htmlFor="name"> Friend Name:</label>
+        <div>
+          <div className="name_wrapper">
+          <label className="name" htmlFor="name"> Friend Name:</label>
+          </div>
+          <div className="friend_input_wrapper">
           <input
             type="text"
             id="name"
             required
             autoFocus
-            className="form-control"
+            className="friend_name_input"
             placeholder="Name"
             value={friend.name}
             onChange={handleControlledInputChange}
           />
         </div>
+        </div>
       </fieldset>
-      <button className="btn btn-primary" onClick={handleClickAddFriend}>
+      <div className="save_friend_wrapper">
+      <button className="save_friend_btn button is-rounded" onClick={handleClickAddFriend}>
         Add As A Friend
       </button>
+      </div>
     </form>
   );
 };

@@ -19,31 +19,42 @@ export const FindMovie = () => {
       });
     }
   };
+
+ 
+  const handleClearSearch = () => {
+      searchInput.current.value = "";
+     setMovies()
+  }
   return (
     <>
-      <div className="movie-search">
+      
         <h1 className="search_movie_lable">Search For A Movie</h1>
+        <br/>
+        <div className="search_wrapper"> 
         <input
           ref={searchInput}
           type="text"
           required
           autoFocus
           placeholder="Movie Title"
-          className="form-control-search"
+          className="form-control-search search_input"
         ></input>
+        </div>
         <br />
         <br />
         <div className="button_div">
-          <button className="search_button" onClick={handleSearch}>
-            SEARCH
+          <button className="search_button button is-rounded" onClick={handleSearch}>
+            Search
+          </button>
+          <button className="clear_search_button button is-rounded" onClick={handleClearSearch}>
+            Clear Search Results
           </button>
         </div>
-        <div>
-          {movies.map((m) => (
+        <div className="search_results_wrapper">
+          {movies?.map((m) => (
             <MovieMiniCard key={m.id} movie={m} />
           ))}
         </div>
-      </div>
     </>
   );
 };

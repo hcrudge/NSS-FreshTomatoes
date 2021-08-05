@@ -13,12 +13,10 @@ export const MovieList = () => {
   const [filterMovies, setFilterMovies] = useState([]);
   const [selectedFriend, setSelectedFriend] = useState("");
 
-  //useEffect - reach out to the world for Movies and Friends
+  //useEffect - reach out through the Provider for Movies and Friends
   useEffect(() => {
     console.log("MovieList: Initial render before data");
-    getMovies()
-    .then(getFriends)
-    .then(setFilterMovies(movies));
+    getMovies().then(getFriends).then(setFilterMovies(movies));
   }, []);
 
   useEffect(() => {
@@ -34,27 +32,25 @@ export const MovieList = () => {
 
   const handleControlledInputChange = (event) => {
     setSelectedFriend(event.target.value);
-//     console.log(selectedFriend);
-    // const filtered = movies.filter(
-    //   (movie) => movie.FriendId === selectedFriend
-    // );
-    // setFilterMovies(filtered);
-
-    // const filteredMovies = filterMovies.map();
   };
   // Creates the HTML to display the list of movies
   return (
     <>
-      <h2 className="MovieListHeader">Movie List</h2>
-      <button
-        onClick={() => {
-          history.push("/movies/search");
-        }}
-      >
-        Add Movie
-      </button>
+      <br />
+      <h1 className="MovieListHeader">MOVIE LIST</h1>
+      <div className="add_movie_wrapper">
+        <button
+          className="add_movie_btn button is-rounded"
+          onClick={() => {
+            history.push("/movies/search");
+          }}
+        >
+          Add Movie
+        </button>
+      </div>
+      <br />
       <div className="form-group">
-        <label htmlFor="friend">Select Friend: </label>
+        <label htmlFor="friend">Select Friend:</label>
         <select
           name="friendId"
           id="friendId"
@@ -62,7 +58,7 @@ export const MovieList = () => {
           className="friend_filter"
           value={movies.friendId}
         >
-          <option value="">See All Friends Recommendations</option>
+          <option value="">See All Recommendations</option>
           {friends.map((friend) => {
             if (
               friend.userId === parseInt(sessionStorage.getItem("tomato_user"))
@@ -76,6 +72,7 @@ export const MovieList = () => {
           })}
         </select>
       </div>
+      <br />
       <div className="movies">
         {/* map over array to display movie cards */}
         {filterMovies.map((movie) => {

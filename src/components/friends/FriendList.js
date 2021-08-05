@@ -19,10 +19,10 @@ export const FriendList = () => {
   // JSX to display the header, button and map over the friend cards from FriendCard.js
   return (
     <>
-      <h2 className="friends_header">My Friends</h2>
-      <div className="add__friend">
+      <h1 className="friends_header">FRIENDS LIST</h1>
+      <div className="add_friend_wrapper">
         <button
-          className="add__friend__btn"
+          className="add__friend__btn button is-rounded"
           onClick={() => {
             history.push("/friends/create");
           }}

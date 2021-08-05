@@ -2,6 +2,7 @@ import React from "react";
 import "./Movie.css";
 import { Link } from "react-router-dom";
 
+
 export const MovieCard = ({ movie }) => (
   <section className="movie">
     <img

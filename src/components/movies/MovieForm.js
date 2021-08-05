@@ -124,19 +124,20 @@ export const MovieForm = () => {
   };
 
   return (
-    <section className="movie">
+      <div className="movie_detail_wrapper">
+    <section className="movie_detail">
       <img
         className="movie_poster"
         src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
         alt="poster"
       />
-      <h3 className="movie__title">{movie.title}</h3>
-      <div className="movie__runtime">Runtime: {movie.runtime} minutes</div>
+      <h2 className="movie_title">{movie.title}</h2>
+      <div className="movie_runtime">Runtime: {movie.runtime} minutes</div>
       {/* <div className="movie_genre">Genre: { movie.genres[0]?.name }</div> */}
       <div className="movie_synposis">{movie.overview}</div>
       <br />
       <div className="form-group">
-        <label htmlFor="friend">Select Friend: </label>
+        <label className="friend_name" htmlFor="friend">Select Friend: </label>
         <select
           name="friendId"
           id="friendId"
@@ -160,7 +161,7 @@ export const MovieForm = () => {
       </div>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="movie_comments">Comments:</label>
+          <label className="movie_comments_lable" htmlFor="movie_comments">Comments:</label>
           <textarea
             type="text"
             id="comments"
@@ -173,12 +174,13 @@ export const MovieForm = () => {
           />
         </div>
       </fieldset>
-      <button className="add_movie_button" onClick={handleClickSaveMovie}>
+      <button className="add_movie_button button is-rounded is-black" onClick={handleClickSaveMovie}>
         Save
       </button>
-      <button className="return_movieList" onClick={handleReturnMovieList}>
+      <button className="return_movieList button is-rounded is-black" onClick={handleReturnMovieList}>
         Cancel
       </button>
     </section>
+    </div>
   );
 };

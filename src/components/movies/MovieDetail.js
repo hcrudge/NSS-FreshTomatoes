@@ -63,6 +63,8 @@ export const MovieDetail = () => {
   };
 
   return (
+    <div className="movie_detail_wrapper">
+
     <section className="movie_detail">
       <img
         className="movie_poster"
@@ -80,7 +82,7 @@ export const MovieDetail = () => {
           onStarClick={handleRatingChange}
         />
       </div>
-      <h3 className="movie__title">{movie.title}</h3>
+      <h3 className="movie_title">{movie.title}</h3>
       <div className="movie__runtime">Runtime: {movie.runtime} minutes</div>
       {/* <div className="movie_genre">Genre: {movie.genres}</div> */}
       <div className="movie_synposis">{movie.overview}</div>
@@ -88,16 +90,17 @@ export const MovieDetail = () => {
         Recommended By: {movie.friend?.friendName}
       </div>
       <div className="movie_comments">Comments: {movie.comments}</div>
-      <button className="edit_movie" onClick={handleEditMovie}>
+      <button className="edit_movie button is-rounded is-black" onClick={handleEditMovie}>
         Edit
       </button>
-      <button className="delete_movie" onClick={handleDeleteMovie}>
+      <button className="delete_movie button is-rounded is-black" onClick={handleDeleteMovie}>
         Delete
       </button>
       <br />
-      <button className="return_movieList" onClick={handleReturnMovieList}>
+      <button className="return_movieList button is-rounded is-black" onClick={handleReturnMovieList}>
         Return to Movie List
       </button>
     </section>
+    </div>
   );
 };

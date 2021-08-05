@@ -26,8 +26,10 @@ export const NavBar = (props) => {
   return (
     <nav className="navbar">
       <ul className="navbar">
-        <img className="logo navbar__item" src="./images/logo.PNG" alt="" />
-        <h2>Fresh Tomatoes</h2>
+          <div className="navbar-brand">
+        <img className="logo navbar__item" src="./images/FTLogo.PNG" alt="" />
+        </div>
+        
         <li
           className={`navbar__item ${checkNavState("home")}`}
           onClick={() => setIsActive("home")}

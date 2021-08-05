@@ -1,4 +1,5 @@
-.movies {
+.movies,
+.search_results_wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -15,35 +16,59 @@
   background-color: darkgray;
 }
 .movie_detail {
-    margin: 1em;
-    padding: 1em;
-    border: 1px solid black;
-    align-items: center;
-    text-align: center;
-    border-radius: 50px;
-    background-color: darkgray;
-   
-  }
+  width: 75%;
+  margin: 1em;
+  padding: 1em;
+  border: 1px solid black;
+  align-items: center;
+  text-align: center;
+  border-radius: 50px;
+  background-color: darkgray;
+}
 /* .movie_poster {
     border-radius: 50px;
 } */
 .mini_movie_container {
-  flex-basis: 28%;
+  width: 28%;
   margin: 1em;
   padding: 1em;
   background-color: darkgray;
   border-radius: 50px;
   border: 1px solid black;
   text-align: center;
-  align-items: center;
-}
-.mini_movie_outside {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .starRating {
   display: flex;
   justify-content: center;
+}
+
+.MovieListHeader {
+  text-align: center;
+  /* font-family: Luminari, fantasy */
+  font-weight: bold;
+}
+
+.add_movie_wrapper,
+.button_div,
+.movie_detail_wrapper {
+  display: flex;
+  justify-content: center;
+}
+.add_movie_btn,
+.search_button,
+.clear_search_button {
+  width: 175px;
+  background-color: red;
+}
+
+.search_movie_lable {
+  text-align: center;
+}
+
+.movie_title,
+.friend_select,
+.movie_comments_lable {
+  font-weight: bold;
+  font-size: 20px;
 }

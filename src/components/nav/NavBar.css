@@ -31,3 +31,8 @@
 .logo:hover {
   transform: scale(1.1);
 }
+.logo {
+  height: 75px; 
+  border-radius: 50px; 
+  margin: 4px;
+}

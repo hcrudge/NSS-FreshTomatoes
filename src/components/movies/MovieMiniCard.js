@@ -22,18 +22,16 @@ export const MovieMiniCard = ({ movie }) => {
   // Displays movie poster and title for items returned in the
   // search function in the MovieSearch component
   return (
-    <div className="mini_movie_outside">
-      <div className="mini_movie_container">
-        <img className="mini_movie_poster" src={imageURL} alt={movie.title} />
-        <h3 className="mini_movie-title">{movie.title}</h3>
-        <button
-          className="mini_movie_add_buton"
-          value={movie.id}
-          onClick={handleClickSelectMovie}
-        >
-          Select
-        </button>
-      </div>
-    </div>
+    <section className="mini_movie_container">
+      <img className="mini_movie_poster" src={imageURL} alt="poster" />
+      <h3 className="mini_movie-title">{movie.title}</h3>
+      <button
+        className="mini_movie_add_btn button is-black is-rounded"
+        value={movie.id}
+        onClick={handleClickSelectMovie}
+      >
+        Select
+      </button>
+    </section>
   );
 };

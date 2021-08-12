@@ -10,7 +10,7 @@ export const MovieCard = ({ movie }) => (
       src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
       alt="poster"
     />
-    <h3 className="movie__title">
+    <h3 className="movie_title">
       <Link to={`/movies/detail/${movie.id}`}>{movie.title}</Link>
     </h3>
     <div className="movie__runtime">Runtime: {movie.runtime} minutes</div>

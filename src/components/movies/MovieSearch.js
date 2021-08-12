@@ -26,7 +26,7 @@ export const FindMovie = () => {
      setMovies()
   }
   return (
-    <>
+    <div className="parallax">
       
         <h1 className="search_movie_lable">Search For A Movie</h1>
         <br/>
@@ -55,6 +55,6 @@ export const FindMovie = () => {
             <MovieMiniCard key={m.id} movie={m} />
           ))}
         </div>
-    </>
+    </div>
   );
 };

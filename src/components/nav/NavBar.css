@@ -1,7 +1,24 @@
+.navbar_image {
+  flex-wrap: nowrap;
+}
 .navbar {
+  background-color: rgba(12, 34, 56, 0);
+}
+
+.navbar_wrapper {
   display: flex;
-  background-color: rgba(255, 0, 0, 0.705);
-  flex-basis: 100%;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  text-decoration: none;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  background-image: url("https://ak.picdn.net/shutterstock/videos/1038613775/thumb/1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  top: 0;
+  min-height: 60px;
+  
 }
 
 .navbar__item {
@@ -15,12 +32,11 @@
 /* .active:hover {
 } */
 
-.navbar__link {
+.navbar-link {
   color: black;
-  margin: 5em;
 }
 
-.navbar__link:hover {
+.navbar-link:hover {
   color: rgb(50, 146, 224);
 }
 
@@ -32,7 +48,7 @@
   transform: scale(1.1);
 }
 .logo {
-  height: 75px; 
-  border-radius: 50px; 
+  height: 75px;
+  border-radius: 50px;
   margin: 4px;
 }

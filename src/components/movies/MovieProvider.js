@@ -57,8 +57,9 @@ export const MovieProvider = (props) => {
   const deleteMovie = (id) => {
     return fetch(`http://localhost:8088/movies/${id}`, {
       method: "DELETE",
-    }).then(getMovies);
+    });
   };
+
 
   /*
     A context provider is returned which contains the 
@@ -75,7 +76,8 @@ export const MovieProvider = (props) => {
         deleteMovie,
         addMovie,
         getMovieById,
-        updateMovie
+        updateMovie,
+      
       }}
     >
       {props.children}

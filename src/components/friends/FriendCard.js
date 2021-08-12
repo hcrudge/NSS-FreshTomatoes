@@ -6,7 +6,7 @@ import { MovieContext } from "../movies/MovieProvider";
 
 export const FriendCard = ({ friend }) => {
   const { deleteFriend, getFriends } = useContext(FriendContext);
-  const { movies, getMovies } = useContext(MovieContext);
+  const { movies, getMovies, deleteMovie } = useContext(MovieContext);
   const history = useHistory();
   const userId = parseInt(sessionStorage.getItem("tomato_user"));
 
@@ -23,7 +23,25 @@ export const FriendCard = ({ friend }) => {
       history.push("/friends");
     });
   };
+  //   const find movies where friend recommended and user is friend.
+  const handleDeleteMovieByFriend = () => {
+    movies.map((movie) => {
+      if (movie.userId === userId && movie.friendId === friend.id){
 
+            console.log(movie.id)  
+              return deleteMovie(movie.id);
+        }
+      
+        
+    });
+    getMovies();
+    history.push("/friends");
+  };
+
+  //   {filterMovies.map((movie) => {
+  //     if (movie.userId === parseInt(sessionStorage.getItem("tomato_user")))
+  //       return <MovieCard key={movie.id} movie={movie} />;
+  //   })}
   return (
     <>
       <section className="friend">
@@ -38,6 +56,16 @@ export const FriendCard = ({ friend }) => {
             }}
           >
             Remove Friend
+          </button>
+        </div>
+        <div className="delete_friend_movie_btn_wrapper">
+          <button
+            className="delete_friend_movie_btn button is-black is-small is-rounded"
+            onClick={() => {
+              handleDeleteMovieByFriend();
+            }}
+          >
+            Remove Movies By This Friend
           </button>
         </div>
       </section>

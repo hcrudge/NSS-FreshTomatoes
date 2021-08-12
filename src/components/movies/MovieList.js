@@ -35,7 +35,7 @@ export const MovieList = () => {
   };
   // Creates the HTML to display the list of movies
   return (
-    <>
+    <div className="parallax">
       <br />
       <h1 className="MovieListHeader">MOVIE LIST</h1>
       <div className="add_movie_wrapper">
@@ -73,6 +73,7 @@ export const MovieList = () => {
         </select>
       </div>
       <br />
+      <div>
       <div className="movies">
         {/* map over array to display movie cards */}
         {filterMovies.map((movie) => {
@@ -80,6 +81,7 @@ export const MovieList = () => {
             return <MovieCard key={movie.id} movie={movie} />;
         })}
       </div>
-    </>
+      </div>
+    </div>
   );
 };

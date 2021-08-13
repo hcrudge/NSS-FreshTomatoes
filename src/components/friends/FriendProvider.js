@@ -30,10 +30,6 @@ export const FriendProvider = (props) => {
     }).then(getFriends);
   };
 
-  // const getFriendById = (id) => {
-  //     return fetch(`http://localhost:8088/friends/${id}?_expand=user`)
-  //         .then(res => res.json())
-  // };
 
   return (
     <FriendContext.Provider

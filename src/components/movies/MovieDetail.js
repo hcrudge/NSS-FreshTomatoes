@@ -4,7 +4,7 @@ import { useParams, useHistory } from "react-router-dom";
 import StarRatingComponent from "react-star-rating-component";
 
 export const MovieDetail = () => {
-  const { getMovieById, deleteMovie, updateMovie } = useContext(MovieContext);
+  const { getMovies, getMovieById, deleteMovie, updateMovie } = useContext(MovieContext);
   const [movie, setMovie] = useState({});
   const history = useHistory();
   const { movieId } = useParams();
@@ -48,7 +48,7 @@ export const MovieDetail = () => {
     event.preventDefault();
     console.log("movieId", movie.id);
     deleteMovie(movie.id).then(() => {
-      history.push("/");
+      getMovies().then(history.push("/"));
     });
   };
 
@@ -64,43 +64,51 @@ export const MovieDetail = () => {
 
   return (
     <div className="movie_detail_wrapper">
-
-    <section className="movie_detail">
-      <img
-        className="movie_poster"
-        src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-        alt="poster"
-      />
-      <br />
-      <br />
-
-      <div className="starRating">
-      <StarRatingComponent 
-          name="rate1" 
-          starCount={5}
-          value={parseInt(rating)}
-          onStarClick={handleRatingChange}
+      <section className="movie_detail">
+        <img
+          className="movie_poster"
+          src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+          alt="poster"
         />
-      </div>
-      <h3 className="movie_title">{movie.title}</h3>
-      <div className="movie__runtime">Runtime: {movie.runtime} minutes</div>
-      {/* <div className="movie_genre">Genre: {movie.genres}</div> */}
-      <div className="movie_synposis">{movie.overview}</div>
-      <div className="movie_friend">
-        Recommended By: {movie.friend?.friendName}
-      </div>
-      <div className="movie_comments">Comments: {movie.comments}</div>
-      <button className="edit_movie button is-rounded is-black" onClick={handleEditMovie}>
-        Edit
-      </button>
-      <button className="delete_movie button is-rounded is-black" onClick={handleDeleteMovie}>
-        Delete
-      </button>
-      <br />
-      <button className="return_movieList button is-rounded is-black" onClick={handleReturnMovieList}>
-        Return to Movie List
-      </button>
-    </section>
+        <br />
+        <br />
+
+        <div className="starRating">
+          <StarRatingComponent
+            name="rate1"
+            starCount={5}
+            value={parseInt(rating)}
+            onStarClick={handleRatingChange}
+          />
+        </div>
+        <h3 className="movie_title">{movie.title}</h3>
+        <div className="movie__runtime">Runtime: {movie.runtime} minutes</div>
+        {/* <div className="movie_genre">Genre: {movie.genres}</div> */}
+        <div className="movie_synposis">{movie.overview}</div>
+        <div className="movie_friend">
+          Recommended By: {movie.friend?.friendName}
+        </div>
+        <div className="movie_comments">Comments: {movie.comments}</div>
+        <button
+          className="edit_movie button is-rounded is-black"
+          onClick={handleEditMovie}
+        >
+          Edit
+        </button>
+        <button
+          className="delete_movie button is-rounded is-black"
+          onClick={handleDeleteMovie}
+        >
+          Delete
+        </button>
+        <br />
+        <button
+          className="return_movieList button is-rounded is-black"
+          onClick={handleReturnMovieList}
+        >
+          Return to Movie List
+        </button>
+      </section>
     </div>
   );
 };

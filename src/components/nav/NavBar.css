@@ -3,6 +3,7 @@
 }
 .navbar {
   background-color: rgba(12, 34, 56, 0);
+  flex-wrap:nowrap
 }
 
 .navbar_wrapper {

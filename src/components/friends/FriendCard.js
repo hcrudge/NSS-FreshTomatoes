@@ -46,11 +46,11 @@ export const FriendCard = ({ friend }) => {
 
   console.log("filtered movies", filteredMovies);
 
-  const sumOfMovieRatings = filteredMovies.reduce((a,b) => a + b, 0);
+  const sumOfMovieRatings = filteredMovies.reduce((a, b) => a + b, 0);
 
   const averageMovieRating = sumOfMovieRatings / countOfFriendsMovies;
 
-//   console.log(Math.floor(averageMovieRating));
+  //   console.log(Math.floor(averageMovieRating));
 
   const handleDeleteFriend = () => {
     deleteFriend(friend.id).then(() => {

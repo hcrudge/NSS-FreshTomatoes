@@ -61,7 +61,7 @@ export const FriendCard = ({ friend }) => {
   const handleDeleteMovieByFriend = () => {
     movies.map((movie) => {
       if (movie.userId === userId && movie.friendId === friend.id) {
-        console.log(movie.id);
+        // console.log(movie.id);
         return deleteMovie(movie.id);
       }
     });
@@ -72,18 +72,23 @@ export const FriendCard = ({ friend }) => {
   return (
     <>
       <section className="friend">
-        <h2 className="friend_name">{friend.friendName}</h2>
-        <div>Movies Recommended to You: {moviesRecommended}</div>
-        <div>Count of Friends Movies: {countOfFriendsMovies}</div>
         <br />
-        <div>Average Media Compatability Score: </div>
-        <div className="starRating">
-          <StarRatingComponent
-            name="rate1"
-            starCount={5}
-            value={parseInt(Math.floor(averageMovieRating))}
-          />
+        <h2 className="friend_name">{friend.friendName}</h2>
+        <div className="friend_recs">
+          <div className="movies_rec">Movies Recommended: {moviesRecommended}</div>
+          <div className="friend_rating">
+            <div className="rating_wrapper">Average Media Compatability Score: </div>
+            <div className="starRating">
+              <StarRatingComponent
+                name="rate1"
+                starCount={5}
+                value={parseInt(Math.floor(averageMovieRating))}
+              />
+            </div>
+          </div>
         </div>
+        <br/>
+        <div className="delete_buttons_wrapper">
         <div className="delete_btn_wrapper">
           <button
             className="delete_friend_btn button is-black is-small is-rounded"
@@ -103,6 +108,7 @@ export const FriendCard = ({ friend }) => {
           >
             Remove Movies By This Friend
           </button>
+        </div>
         </div>
       </section>
     </>

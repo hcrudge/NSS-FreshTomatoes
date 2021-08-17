@@ -7,7 +7,8 @@
   padding: 1em;
   border: 1px solid black;
   border-radius: 50px;
-  background-color: lightgray;
+  background-color: rgba(212, 218, 224, 0.5);
+  color: black
 }
 .friends {
   display: flex;
@@ -18,14 +19,18 @@
   display: flex;
   justify-content: flex-end;
 }
-/* .delete_friend_btn {
-  
-} */
+
 
 .friends_header,
 .name {
-  text-align: center;
+    text-align: center;
   font-weight: bold;
+  color: whitesmoke;
+  -webkit-text-stroke: 1.11px black; /* stroke width and color */
+  color: rgb(255, 255, 255);
+  -webkit-font-smoothing: antialiased;
+  font-size: 50px;
+  margin-top: 70px;
 }
 .add_friend_wrapper,
 .save_friend_wrapper,
@@ -39,21 +44,40 @@
 .add__friend__btn,
 .save_friend_btn {
   width: 175px;
-  background-color: red;
+  background-color:cornsilk;
   border: black;
   border-width: 1px;
 }
 .friend_name {
   font-size: 22px;
   font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
 }
 .friendForm_title {
   text-align: center;
   font-weight: bold;
+  margin-top:100px
 }
 
 .friend_name_input {
   width: 60%;
   height: 40px;
   font-size: 20px;
+}
+
+.friend_rating{
+margin-left: 50px
+}
+.delete_buttons_wrapper{
+    display:flex;
+    justify-content: center;
+}
+.delete_friend_btn{
+    margin-right: 10px
+}
+.movies_rec, .rating_wrapper{
+    justify-content: center;
+    text-align: center;
+   
 }

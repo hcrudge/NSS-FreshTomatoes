@@ -1,4 +1,5 @@
 import React, { useState, createContext } from "react";
+import { tmdbAPIKey } from "./MovieAPIKey";
 
 // The context is imported and used by individual components that need data
 export const MovieContext = createContext();
@@ -88,11 +89,11 @@ export const MovieProvider = (props) => {
 // Reach out to the TMDB API
 export const searchMovie = (term) => {
   return fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=c4e5719c7e8a0eddc452fe601c001d80&language=en-US&query=${term}&page=1&include_adult=false`
+    `https://api.themoviedb.org/3/search/movie?api_key=${tmdbAPIKey}&language=en-US&query=${term}&page=1&include_adult=false`
   ).then((result) => result.json());
 };
 export const fetchMovie = (id) => {
   return fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=c4e5719c7e8a0eddc452fe601c001d80`
+    `https://api.themoviedb.org/3/movie/${id}?api_key=${tmdbAPIKey}`
   ).then((response) => response.json());
 };

@@ -39,12 +39,11 @@ export const FriendForm = () => {
   };
 
   return (
-    <form className="friendForm">
-      <h1 className="friendForm_title">New Friend</h1>
+    <form className="friendForm parallax">
       <fieldset>
         <div>
           <div className="name_wrapper">
-          <label className="name" htmlFor="name"> Friend Name:</label>
+          <label className="name" htmlFor="name"> FRIEND NAME:</label>
           </div>
           <div className="friend_input_wrapper">
           <input

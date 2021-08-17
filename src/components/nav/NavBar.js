@@ -27,7 +27,7 @@ export const NavBar = (props) => {
 
       <nav className="navbar_wrapper">
         <ul className="navbar is-spaced">
-          <div className="navbar-brand is-spaced">
+          <div className="navbar-brand">
             <img
               className="logo navbar__item"
               src="./images/FTLogo.PNG"

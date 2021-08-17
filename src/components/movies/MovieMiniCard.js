@@ -25,6 +25,7 @@ export const MovieMiniCard = ({ movie }) => {
     <section className="mini_movie_container">
       <img className="mini_movie_poster" src={imageURL} alt="poster" />
       <h3 className="mini_movie-title">{movie.title}</h3>
+      <div className="select_wrapper">
       <button
         className="mini_movie_add_btn button is-black is-rounded"
         value={movie.id}
@@ -32,6 +33,7 @@ export const MovieMiniCard = ({ movie }) => {
       >
         Select
       </button>
+      </div>
     </section>
   );
 };

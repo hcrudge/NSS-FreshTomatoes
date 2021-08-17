@@ -37,7 +37,7 @@ export const FindMovie = () => {
           required
           autoFocus
           placeholder="Movie Title"
-          className="form-control-search search_input"
+          className="search_input"
         ></input>
         </div>
         <br />

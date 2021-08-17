@@ -18,7 +18,7 @@ export const FriendList = () => {
 
   // JSX to display the header, button and map over the friend cards from FriendCard.js
   return (
-    <>
+    <div className="parallax">
       <h1 className="friends_header">FRIENDS LIST</h1>
       <div className="add_friend_wrapper">
         <button
@@ -41,6 +41,6 @@ export const FriendList = () => {
           }
         })}
       </div>
-    </>
+    </div>
   );
 };

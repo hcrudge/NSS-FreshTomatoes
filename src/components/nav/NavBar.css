@@ -1,55 +1,71 @@
-.navbar_image {
-  flex-wrap: nowrap;
-}
+
 .navbar {
   background-color: rgba(12, 34, 56, 0);
-  flex-wrap:nowrap
+  flex-wrap:nowrap;
+  display: flex;
+}
+
+.navbar-brand {
+    justify-content: left;
+    align-items:flex-start;
+    text-align: left;
+    align-content: flex-start;
+    margin-top: 20px
+}
+.navbar-menu{
+    margin-left: 65px;
+    color: black;
+    font-weight: bold;
+    font-size: 27px;
+    padding: 20px;
+}
+.navbar-item{
+    margin-right: 120px
 }
 
 .navbar_wrapper {
   display: flex;
-  justify-content: space-evenly;
   flex-wrap: nowrap;
   text-decoration: none;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
-  background-image: url("https://ak.picdn.net/shutterstock/videos/1038613775/thumb/1.jpg");
+
+  /* background-image: url("https://ak.picdn.net/shutterstock/videos/1038613775/thumb/1.jpg"); */
+  /* background-image: url("https://image.shutterstock.com/image-photo/retro-lightbox-customizable-design-classic-260nw-1509271493.jpg"); */
+  background-image: url("https://t4.ftcdn.net/jpg/03/35/34/15/360_F_335341530_fn9CKJT39F1sqX5uynUPv0SEv7mzR5gw.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   top: 0;
-  min-height: 60px;
-  
+  min-height: 150px;
+  max-height: 170px;
+  position:fixed; 
+  top:0;
+  width:100%;
+  z-index: 100;
 }
 
 .navbar__item {
   list-style-type: none;
   justify-content: space-between;
+  height: 75px;
+  border-radius: 50px;
+  margin: 5px;
 }
+.logo:hover {
+    transform: scale(1.1);
+  }
 
-/* .active {
-} */
 
-/* .active:hover {
-} */
-
-.navbar-link {
+.navbar_link {
   color: black;
 }
 
-.navbar-link:hover {
-  color: rgb(50, 146, 224);
+.navbar_link:hover {
+  color:grey;
 }
 
 /* .logo {
    
 } */
 
-.logo:hover {
-  transform: scale(1.1);
-}
-.logo {
-  height: 75px;
-  border-radius: 50px;
-  margin: 4px;
-}
+
+

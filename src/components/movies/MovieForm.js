@@ -174,10 +174,10 @@ export const MovieForm = () => {
           />
         </div>
       </fieldset>
-      <button className="add_movie_button button is-rounded" onClick={handleClickSaveMovie}>
+      <button className="add_movie_button button is-black is-rounded" onClick={handleClickSaveMovie}>
         Save
       </button>
-      <button className="return_movieList button is-rounded" onClick={handleReturnMovieList}>
+      <button className="return_movieList button is-black is-rounded" onClick={handleReturnMovieList}>
         Cancel
       </button>
     </section>

@@ -76,46 +76,46 @@ export const MovieList = () => {
 
   const selectedRandomMovie = arrOfUserMovieIds[randomMovie];
 
-
-  function timeConvert(n){
-      const num = n;
-      const hours = (num/60);
-      const rhours = Math.floor(hours);
-      const minutes = (hours-rhours) * 60;
-      const rminutes = Math.round(minutes);
-      return "or " + rhours + " hour(s) and " + rminutes + " minute(s)"
+  function timeConvert(n) {
+    const num = n;
+    const hours = num / 60;
+    const rhours = Math.floor(hours);
+    const minutes = (hours - rhours) * 60;
+    const rminutes = Math.round(minutes);
+    return "or " + rhours + " hour(s) and " + rminutes + " minute(s)";
   }
-
-
 
   // Creates the HTML to display the list of movies
   return (
     <div className="parallax">
       <br />
-        <h1 className="MovieListHeader">MOVIE LIST</h1>
-     
-        <div className="add_movie_wrapper">
-          <button className="add_movie_btn button is-rounded"
-            onClick={() => {
-              history.push("/movies/search");
-            }}
-          >
-            Add Movie
-          </button>
-        </div> 
-        <div className="random_movie_wrapper">
-        
+      <h1 className="MovieListHeader">MOVIE LIST</h1>
+
+      <div className="add_movie_wrapper">
+        <button
+          className="add_movie_btn button is-rounded"
+          onClick={() => {
+            history.push("/movies/search");
+          }}
+        >
+          Add Movie
+        </button>
+      </div>
+      <div className="random_movie_wrapper">
         <button
           className="random_movie_btn button is-rounded"
           onClick={() => {
             history.push(`/movies/detail/${selectedRandomMovie}`);
           }}
-        ><img className="random_reel" src="https://thumbs.dreamstime.com/b/vintage-film-reel-concept-monochrome-style-isolated-vector-illustration-vintage-film-reel-concept-117615301.jpg"></img>
+        >
+          <img
+            className="random_reel"
+            src="https://thumbs.dreamstime.com/b/vintage-film-reel-concept-monochrome-style-isolated-vector-illustration-vintage-film-reel-concept-117615301.jpg"
+          ></img>
           Stop Your Scrollin'
         </button>
-        </div>
-    
-      
+      </div>
+
       <div className="form-group">
         <div className="friend_filter_wrapper">
           <label htmlFor="friend">Select Friend:</label>
@@ -142,15 +142,18 @@ export const MovieList = () => {
           </select>
         </div>
         <div className="binge_wrapper">
-        <div className="bingeMeter">
-            <img className="binge_watch" src="https://st2.depositphotos.com/1041273/5784/v/600/depositphotos_57844367-stock-illustration-stopwatch-icon.jpg"></img>
-          Binge Watch Meter: {sumOfMovieRuntime} minutes
-          <br/>
-          {timeConvert(sumOfMovieRuntime)}
-        </div>
+          <div className="bingeMeter">
+            <img
+              className="binge_watch"
+              src="https://st2.depositphotos.com/1041273/5784/v/600/depositphotos_57844367-stock-illustration-stopwatch-icon.jpg"
+            ></img>
+            Binge Watch Meter: {sumOfMovieRuntime} minutes
+            <br />
+            {timeConvert(sumOfMovieRuntime)}
+          </div>
         </div>
       </div>
-      <br />
+     
       <div>
         <div className="movies">
           {/* map over array to display movie cards */}

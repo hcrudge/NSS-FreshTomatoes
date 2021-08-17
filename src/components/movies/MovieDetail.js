@@ -90,12 +90,12 @@ export const MovieDetail = () => {
           Recommended By: {movie.friend?.friendName}
         </div>
         <div className="movie_comments">Comments: {movie.comments}</div>
-        <button className="edit_movie button is-rounded"
+        <button className="edit_movie button is-black is-rounded"
           onClick={handleEditMovie}
         >
           Edit
         </button>
-        <button className="delete_movie button is-rounded"
+        <button className="delete_movie button is-black is-rounded"
           onClick={handleDeleteMovie}
         >
           Delete
@@ -103,7 +103,7 @@ export const MovieDetail = () => {
         <br />
  
         <button
-          className="return_movieList button is-rounded"
+          className="return_movieList button is-black is-rounded"
           onClick={handleReturnMovieList}
         >
           Return to Movie List

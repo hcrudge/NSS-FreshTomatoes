@@ -11,7 +11,7 @@ export const MovieCard = ({ movie }) => (
       alt="poster"
     />
     <h3 className="movie_title">
-      <Link to={`/movies/detail/${movie.id}`}>{movie.title}</Link>
+      <Link className="movie_link" to={`/movies/detail/${movie.id}`}>{movie.title}</Link>
     </h3>
     <div className="movie__runtime">Runtime: {movie.runtime} minutes</div>
     <div className="movie_tagline">{movie.tagline}</div>

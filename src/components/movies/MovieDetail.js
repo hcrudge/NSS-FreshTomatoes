@@ -63,7 +63,7 @@ export const MovieDetail = () => {
   };
 
   return (
-    <div className="movie_detail_wrapper">
+    <div className="movie_detail_wrapper parallax">
       <section className="movie_detail">
         <img
           className="movie_poster"
@@ -82,6 +82,7 @@ export const MovieDetail = () => {
           />
         </div>
         <h3 className="movie_title">{movie.title}</h3>
+        <br/>
         <div className="movie__runtime">Runtime: {movie.runtime} minutes</div>
         {/* <div className="movie_genre">Genre: {movie.genres}</div> */}
         <div className="movie_synposis">{movie.overview}</div>
@@ -89,21 +90,20 @@ export const MovieDetail = () => {
           Recommended By: {movie.friend?.friendName}
         </div>
         <div className="movie_comments">Comments: {movie.comments}</div>
-        <button
-          className="edit_movie button is-rounded is-black"
+        <button className="edit_movie button is-rounded"
           onClick={handleEditMovie}
         >
           Edit
         </button>
-        <button
-          className="delete_movie button is-rounded is-black"
+        <button className="delete_movie button is-rounded"
           onClick={handleDeleteMovie}
         >
           Delete
         </button>
         <br />
+ 
         <button
-          className="return_movieList button is-rounded is-black"
+          className="return_movieList button is-rounded"
           onClick={handleReturnMovieList}
         >
           Return to Movie List

@@ -61,7 +61,7 @@ export const FriendCard = ({ friend }) => {
   const handleDeleteMovieByFriend = () => {
     movies.map((movie) => {
       if (movie.userId === userId && movie.friendId === friend.id) {
-        console.log(movie.id);
+        // console.log(movie.id);
         return deleteMovie(movie.id);
       }
     });

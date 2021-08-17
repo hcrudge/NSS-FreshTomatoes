@@ -124,7 +124,7 @@ export const MovieForm = () => {
   };
 
   return (
-      <div className="movie_detail_wrapper">
+      <div className="movie_detail_wrapper parallax">
     <section className="movie_detail">
       <img
         className="movie_poster"
@@ -174,10 +174,10 @@ export const MovieForm = () => {
           />
         </div>
       </fieldset>
-      <button className="add_movie_button button is-rounded is-black" onClick={handleClickSaveMovie}>
+      <button className="add_movie_button button is-rounded" onClick={handleClickSaveMovie}>
         Save
       </button>
-      <button className="return_movieList button is-rounded is-black" onClick={handleReturnMovieList}>
+      <button className="return_movieList button is-rounded" onClick={handleReturnMovieList}>
         Cancel
       </button>
     </section>

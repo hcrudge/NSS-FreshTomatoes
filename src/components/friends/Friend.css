@@ -24,8 +24,14 @@
 
 .friends_header,
 .name {
-  text-align: center;
+    text-align: center;
   font-weight: bold;
+  color: whitesmoke;
+  -webkit-text-stroke: 1.11px black; /* stroke width and color */
+  color: rgb(255, 255, 255);
+  -webkit-font-smoothing: antialiased;
+  font-size: 50px;
+  margin-top: 65px;
 }
 .add_friend_wrapper,
 .save_friend_wrapper,
@@ -39,7 +45,7 @@
 .add__friend__btn,
 .save_friend_btn {
   width: 175px;
-  background-color: red;
+  background-color:cornsilk;
   border: black;
   border-width: 1px;
 }

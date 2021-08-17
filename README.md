@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+**Setup: Follow the steps below:**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Use terminal to clone this repository - 
+1. cd into the directory it creates
+``git clone git@github.com:hcrudge/NSS-FreshTomatoes.git
+cd fresh-tomatoes``
 
-## Available Scripts
+1. Create an api directory outside of the project directory.
+1. In the api directory, create a copy of the database.json.example and remove the .example extension.
+1. Run json-server -p 8088 -w database.json from the api directory.
+1. Run npm install and wait for all dependencies to be installed.
+1. Run npm start to verify that installation was successful.
 
-In the project directory, you can run:
 
-### `npm start`
+    Note: Your database.json file is already in the .gitignore file for this project, so it will never be added to the repo or pushed to Github.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I decided to create Fresh Tomatoes becuase I love to spend time watching good movies, but there are so many options out there, and not all of them are worth my time to watch (for me). I have lovley friends and family who recommend films, but I have found that often I couldn't remember the name of a movie they recommended, or I would remember the name, but couln't remember who recommended it to me, so I could tell if I really wanted to watch that or was in the mood for the type of film they generally enjoyed.
 
-### `npm test`
+I was frustrated with available list applications and their lack of features for keeping track of these recommendations, so I built my app to keep track of a users list of movies recommended by friends, as well as their ratings of these movies once they had watched them. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+My goals for this app were to build a CRUD (Create, Read, Update, Delete) app to help solidify and expand my understanding and comfort with coding in React and Javascript as well as utilizing a third party API and dabbling in the Bulma CSS framework (and a few other plug-in components).  
+I also utilized GitHub’s project board to help keep myself organized and on task.
 
-### `npm run build`
+This application is built for my Front-End/Client-Side Capstone project for Nashville Software School.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Tech Stack:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The app is built with the ReactJS library and supplemented with The Movie DataBase API, react-star-rating npm, Fresh Tomatoes is designed as a CRUD app and is supported by a flat data-structure utilizing JSON Server along with being styled with Bulma framework and CSS.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+API Resources:
+The following are examples of how your JSON server shoudl look once it is populated with data from the application.
 
-### `npm run eject`
+Note: This version of Fresh Tomatoes! has mock authentication and does not provide secure storage. Please do not store sensitive information in this database!
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```users: [
+{
+      "id": 1,
+      "name": "Holly Rudge",
+      "email": "holly@rudge.com",
+      "icon": "",
+    
+    }],
+friends: [
+{
+      "id": 1,
+      "friendName": "Joe Shepherd",
+      "icon": "",
+      "userId": 1
+    }],
+movies[
+{
+      "id": 5,
+      "TMDBId": 329,
+      "poster_path": "/oU7Oq2kFAAlGqbU4VoAE36g4hoI.jpg",
+      "title": "Jurassic Park",
+      "runtime": 127,
+      "genre": "Adventure",
+      "overview": "A wealthy entrepreneur secretly creates a theme park featuring living dinosaurs drawn from prehistoric DNA. Before opening day, he invites a team of experts and his two eager grandchildren to experience the park and help calm anxious investors. However, the park is anything but amusing as the security systems go off-line and the dinosaurs escape.",
+      "tagline": "An adventure 65 million years in the making.",
+      "userId": 2,
+      "friendId": 1,
+      "userRating": 0,
+      "comments": "Great Soundtrack!"
+    }]
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+    
+Capstone ERD (Entity Relationship Diagram):
+Link: https://dbdiagram.io/d/60c38e4d0c1ff875fcd4773e
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Capstone ERD
+<img width="1089" alt="Screen Shot 2021-08-17 at 2 51 44 PM" src="https://user-images.githubusercontent.com/84142388/129791327-ed84216d-c6e1-4422-a47b-00055672ab34.png">
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Capstone Wireframe:
+Link: https://miro.com/app/board/o9J_l5IoLws=/
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

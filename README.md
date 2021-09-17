@@ -6,16 +6,17 @@
 cd fresh-tomatoes``
 
 1. Create an api directory outside of the project directory.
-1. In the api directory, create a copy of the database.json.example and remove the .example extension.
-1. Run json-server -p 8088 -w database.json from the api directory.
-1. Run npm install and wait for all dependencies to be installed.
-1. Run npm start to verify that installation was successful.
+2. You will need to request an API Key from The Movie Database (https://developers.themoviedb.org/3/getting-started/introduction)
+3. In the api directory, create a copy of the database.json.example and remove the .example extension.
+4. Run json-server -p 8088 -w database.json from the api directory.
+5. Run npm install and wait for all dependencies to be installed.
+6. Run npm start to verify that installation was successful.
 
 
-    Note: Your database.json file is already in the .gitignore file for this project, so it will never be added to the repo or pushed to Github.
+>Note: Your database.json file is already in the .gitignore file for this project, so it will never be added to the repo or pushed to Github.
 
 
-I decided to create Fresh Tomatoes becuase I love to spend time watching good movies, but there are so many options out there, and not all of them are worth my time to watch (for me). I have lovley friends and family who recommend films, but I have found that often I couldn't remember the name of a movie they recommended, or I would remember the name, but couln't remember who recommended it to me, so I could tell if I really wanted to watch that or was in the mood for the type of film they generally enjoyed.
+I decided to create Fresh Tomatoes because I love to spend time watching good movies, but there are so many options out there, and not all of them are worth my time to watch (for me). I have lovely friends and family who recommend films, but I have found that often I couldn't remember the name of a movie they recommended, or I would remember the name, but couldn't remember who recommended it to me, so I could tell if I really wanted to watch that or was in the mood for the type of film they generally enjoyed.
 
 I was frustrated with available list applications and their lack of features for keeping track of these recommendations, so I built my app to keep track of a users list of movies recommended by friends, as well as their ratings of these movies once they had watched them. 
 
@@ -29,9 +30,9 @@ This application is built for my Front-End/Client-Side Capstone project for Nash
 The app is built with the ReactJS library and supplemented with The Movie DataBase API, react-star-rating npm, Fresh Tomatoes is designed as a CRUD app and is supported by a flat data-structure utilizing JSON Server along with being styled with Bulma framework and CSS.
 
 API Resources:
-The following are examples of how your JSON server shoudl look once it is populated with data from the application.
+The following are examples of how your JSON server should look once it is populated with data from the application.
 
-Note: This version of Fresh Tomatoes! has mock authentication and does not provide secure storage. Please do not store sensitive information in this database!
+Note: This version of Fresh Tomatoes has mock authentication and does not provide secure storage. Please do not store sensitive information in this database!
 
 ```users: [
 {

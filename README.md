@@ -1,3 +1,8 @@
+**Quick View of my Application:
+Movie List Main Component:
+<img width="1439" alt="Main Movie List Page" src="https://user-images.githubusercontent.com/84142388/134083955-b655bc8f-060d-4e31-87f1-9a7c65383bdd.png">
+
+
 **Setup: Follow the steps below:**
 
 1. Use terminal to clone this repository - 
@@ -75,4 +80,5 @@ Capstone ERD
 
 Capstone Wireframe:
 Link: https://miro.com/app/board/o9J_l5IoLws=/
+
 

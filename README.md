@@ -1,6 +1,23 @@
 **Quick View of my Application:
-Movie List Main Component:
+Movie List Main Component:**
 <img width="1439" alt="Main Movie List Page" src="https://user-images.githubusercontent.com/84142388/134083955-b655bc8f-060d-4e31-87f1-9a7c65383bdd.png">
+Includes ability to filter movies by the friend who recommended, as well as select a random movie from the movie list and add a new movie to the movie list.
+
+**Filtered Movie List by Friend**
+<img width="1440" alt="Filtered Movie List" src="https://user-images.githubusercontent.com/84142388/134084256-b792bac8-a7ab-4efc-87cf-36ebfbfb47b4.png">
+
+**Search For Movies from "The Movie Database API"**
+<img width="1440" alt="MovieSearch" src="https://user-images.githubusercontent.com/84142388/134084371-b409ea52-efd3-4f27-b1bb-4b510bc737d2.png">
+Select the desired movie from the search results.
+
+**Add Movie Component:**
+<img width="1435" alt="Add Movie - Select Friend   Add Comment" src="https://user-images.githubusercontent.com/84142388/134084381-9782e3b3-6dbc-4144-ae2f-c8b30839eb9c.png">
+
+Includes ability to select the friend who recommended the film from a drop down, and add any comments.
+
+**Movie Detail Component:
+<img width="1440" alt="MovieDetail" src="https://user-images.githubusercontent.com/84142388/134084631-e8a992f3-fd98-4fad-96bb-b04f12813efa.png">
+
 
 
 **Setup: Follow the steps below:**

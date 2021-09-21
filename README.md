@@ -1,6 +1,6 @@
 **Quick View of my Application:
 
-1. Movie List Main Component:**
+**Movie List Main Component:**
 <img width="1439" alt="Main Movie List Page" src="https://user-images.githubusercontent.com/84142388/134083955-b655bc8f-060d-4e31-87f1-9a7c65383bdd.png">
 Includes ability to filter movies by the friend who recommended, as well as select a random movie from the movie list and add a new movie to the movie list.
 
@@ -19,7 +19,12 @@ Includes ability to select the friend who recommended the film from a drop down,
 **Movie Detail Component:
 <img width="1440" alt="MovieDetail" src="https://user-images.githubusercontent.com/84142388/134084631-e8a992f3-fd98-4fad-96bb-b04f12813efa.png">
 
+Includes the ability to update movie detail, rate selected movie, as well as delete movie from the movie list.
 
+**Friends List**
+<img width="1440" alt="FriendsList" src="https://user-images.githubusercontent.com/84142388/134108385-da107c89-c70e-4cdd-bc23-be18f0964403.png">
+
+Includes the ability to add a new friend, update friend detail, delete a friend, and delete all movies recommended by selected friend.
 
 **Setup: Follow the steps below:**
 

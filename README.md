@@ -5,10 +5,10 @@
 
 Includes ability to filter movies by the friend who recommended, as well as select a random movie from the movie list and add a new movie to the movie list.
 
-**Filtered Movie List by Friend**
+**Filtered Movie List by Friend:**
 <img width="1440" alt="Filtered Movie List" src="https://user-images.githubusercontent.com/84142388/134084256-b792bac8-a7ab-4efc-87cf-36ebfbfb47b4.png">
 
-**Search For Movies from "The Movie Database API"**
+**Search For Movies from "The Movie Database" API:**
 <img width="1440" alt="MovieSearch" src="https://user-images.githubusercontent.com/84142388/134084371-b409ea52-efd3-4f27-b1bb-4b510bc737d2.png">
 
 Select the desired movie from the search results.
@@ -23,7 +23,7 @@ Includes ability to select the friend who recommended the film from a drop down,
 
 Includes the ability to update movie detail, rate selected movie, as well as delete movie from the movie list.
 
-**Friends List**
+**Friends List Component:**
 <img width="1440" alt="FriendsList" src="https://user-images.githubusercontent.com/84142388/134108385-da107c89-c70e-4cdd-bc23-be18f0964403.png">
 
 Includes the ability to add a new friend, update friend detail, delete a friend, and delete all movies recommended by selected friend.
